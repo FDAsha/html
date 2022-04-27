@@ -1,58 +1,56 @@
 <!DOCTYPE html>
+<!-- Если пишешь контент на русском - используй lang="ru" -->
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <!-- Лучше использовать не alias пути, а relative, то есть не просто style.css а именно ./style.css -->
+    <link rel="stylesheet" href="./style.css">
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-
-        <div class="container">
-
-            <nav class="nav nav-differences">
-                <p>Блок навигации</p>
-            </nav>
-
-            <main>
-
-                <section class="content">
-                    <div class="content__wrapper">
-                        <aside class="aside">
-                                <p>Сайдбар</p>
-                        </aside>
-                        <div class="content__blocks blok-content">
-                            <div class="blok-content__top">
-                                <div class="blok-content__item blok-content--one">
-                                    <p>Контент 1</p>
-                                </div>
-                                <div class="blok-content__item blok-content--two">
-                                    <p>Контент 2</p>
-                                </div>
-                            </div>
-                            <div class="blok-content__bottom">
-                                <div class="blok-content__item blok-content--three">
-                                    <p>Контент 3</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-
-            <footer class="footer footer-differences">
-                    <p>подвал</p>
-            </footer>
-
-        </div>
-
+      <div class="container">
+        <!-- У тебя nav один на странице, зачем было делать лишний класс под бэкграунд ?) -->
+        <nav class="nav">
+          <p>Блок навигации</p>
+        </nav>
+        <main>
+          <section class="content">
+            <div class="content__wrapper">
+              <!-- Сайдбар тоже один, зачем класс для него в данном случае? -->
+              <aside class="aside">
+                <p>Сайдбар</p>
+              </aside>
+              <div class="content__blocks blok-content">
+                <!-- Можно было обойтись без block-content--top и block-content--bottom
+                     Flex тебе позволяли решать задачу используя единый контейнер -->
+                <div class="blok-content__top">
+                  <!-- Как так получилось, что класс block-content__item есть, а в стилях его нет ? -->
+                  <div class="blok-content__item blok-content--one">
+                    <p>Контент 1</p>
+                  </div>
+                  <div class="blok-content__item blok-content--two">
+                    <p>Контент 2</p>
+                  </div>
+                </div>
+                <!-- Зачем blok-content__bottom если у тебя есть уникальный block-content--three ? -->
+                <div class="blok-content__bottom">
+                  <div class="blok-content__item blok-content--three">
+                    <p>Контент 3</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <!-- Так же, зачем отдельный класс под футер? В стандартах языка заложено, что он единственный на странице -->
+        <footer class="footer footer-differences">
+          <p>подвал</p>
+        </footer>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
