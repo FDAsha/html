@@ -1,17 +1,10 @@
-function palindrome() {
-
-    const string = 'а роза упала на лапу азора'
-    const stringOne = string.split("").reverse().join("").replace(/\s/g, '').toUpperCase()
-    const stringTwo = string.replace(/\s/g, '').toUpperCase()
-
-    console.log(stringOne)
-    console.log(stringTwo)
-
-    if (stringTwo === stringOne) {
-        console.log(true)
-    } else {
-        console.log(false)
-    }
+function two(string,symbol) {
+   const calc = []
+   for (let i = 0; i < string.length; i++) {
+       if (string[i]===symbol) {
+           calc.push(symbol)
+       }
+   }
+   console.log(calc.length)
 }
-
-palindrome()
+two('Я люблю javascript', 'ю')
